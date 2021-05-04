@@ -57,7 +57,7 @@ const HomeComponent = () => {
   };
 
   React.useEffect(() => {
-    //Creating promise to show loading till all audio files are imported
+    //Creating promise to show loading untill all audio files are imported
     let pr = new Promise((resolve, reject) => {
       keys.forEach(async (keyy, index) => {
         keyy.file = await import(`../assets/sounds/${keyy.sound}.wav`);
@@ -73,6 +73,7 @@ const HomeComponent = () => {
 
   return (
     <div className="wrapper">
+      {/* Showing LoadingComponent untill all audio files are imported */}
       {loaded ? (
         <>
           {keys.map((keyy) => (
